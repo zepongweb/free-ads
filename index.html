@@ -1,15 +1,18 @@
 <h1>RAPSYZ</h1>
 <h3>無料広告サービス</h3>
 広告文を入力：<br>
-<input id="promo-text">
+<input id="promo-text"><br>
 <button onclick=ads()>広告を出す</button>
+<p id="text"></p>
 <script>
   function ads(){
+    document.querySelector('#text').textContent = "少々お待ちください...";
     promotext = document.getElementById('promo-text');
     request = new XMLHttpRequest();
     request.open("POST", "https://discord.com/api/webhooks/1096621396316135474/-GY573-IsL5vSEtx142wH-MkVaamiI0P-NGJc0vTnsrg8A9zsj_JIKJhJ-BUBusKuU9p");
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send("content=" + promotext.value);
-    alart("広告を出しました。");
+    alert("広告を出しました。");
+    document.querySelector('#text').textContent = "";
   }
  </script>
