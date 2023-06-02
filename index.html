@@ -6,13 +6,22 @@
 <p id="text"></p>
 <script>
   function ads(){
-    document.querySelector('#text').textContent = "少々お待ちください...";
     promotext = document.getElementById('promo-text');
+    if (promotext.value.includes("@everyone") || promotext.value.includes("@here") || promotext.value.includes("<@&")){
+      return alert("禁止ワードが含まれています。");
+    }
     request = new XMLHttpRequest();
     request.open("POST", "https://discord.com/api/webhooks/1096621396316135474/-GY573-IsL5vSEtx142wH-MkVaamiI0P-NGJc0vTnsrg8A9zsj_JIKJhJ-BUBusKuU9p");
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send("content=" + promotext.value);
-    alert("広告を出しました。");
-    document.querySelector('#text').textContent = "";
+    if (request.status == 200 || request.status == 201 || request.status == 204){
+      alert("広告を出しました。");
+    }
+    else if (request.status == 429){
+      alert("レート制限です。\n短時間に広告をたくさん出すのはおやめ下さい。");
+    }
+    else{
+      alert("エラー " + request.status.toString() + "\n開発者にお問い合わせください。")
+    }
   }
  </script>
