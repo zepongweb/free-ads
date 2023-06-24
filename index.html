@@ -19,13 +19,16 @@
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send("content=" + promotext.value);
     request = new XMLHttpRequest();
-    request.open("POST", "https://discord.com/api/webhooks/1122162071837093940/PnTFGEvPvA2M1kYyKPxztjaikk_u7dOE2P5w4SDjQFwVNMcDEkCKH_Fcri73JjAczXt0");
-    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send("content=" + promotext.value);
-    request = new XMLHttpRequest();
-    request.open("POST", "https://discord.com/api/webhooks/1122162462578446377/nJk_M5v1eI-eQYD_IB4NL5AV2eenmK9x9ejI9DlbUiOB5aYMiSAhSc79Ax61VwRzX7LQ");
-    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send("content=" + promotext.value);
+    if (promotext.value.includes("discord.gg/") || promotext.value.includes("discord.com/invite/")){
+      request.open("POST", "https://discord.com/api/webhooks/1122166100126343301/Gbi8yV8VUWOCG8tJGNsNhJiia6OxNchQxOW13l38OnKnN7NO4AZ_hgwA8TyyAwBLGU0V");
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      request.send("content=" + promotext.value);
+    }
+    else{
+      request.open("POST", "https://discord.com/api/webhooks/1122162071837093940/PnTFGEvPvA2M1kYyKPxztjaikk_u7dOE2P5w4SDjQFwVNMcDEkCKH_Fcri73JjAczXt0");
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      request.send("content=" + promotext.value);
+    }
     alert("広告を出しました。");
   }
  </script>
