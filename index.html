@@ -6004,7 +6004,7 @@
 <h3>無料広告サービス</h3>
 広告文を入力：<br>
 <textarea id="promo-text"></textarea><br>
-<button onclick=ads()>広告を出す</button>
+<button onclick=ads(), id="btn">広告を出す</button>
 <p id="text"></p>
 <script>
   function ads(){
@@ -6031,5 +6031,9 @@
       request.send("content=" + promotext.value);
     }
     alert("広告を出しました。");
+    document.getElementById("btn").disabled = true;
+    setTimeout({
+      document.getElementById("btn").disabled = false;
+    }, 7500);
   }
  </script>
