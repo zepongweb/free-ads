@@ -1,4 +1,4 @@
-<h1>RAPSYZ</h1>
+<h1>E&F ADS</h1>
 <h3>無料広告サービス</h3>
 広告文を入力：<br>
 <textarea id="promo-text"></textarea><br>
@@ -11,7 +11,19 @@
       return alert("禁止ワードが含まれています。");
     }
     request = new XMLHttpRequest();
-    request.open("POST", "https://discord.com/api/webhooks/1096621396316135474/-GY573-IsL5vSEtx142wH-MkVaamiI0P-NGJc0vTnsrg8A9zsj_JIKJhJ-BUBusKuU9p");
+    request.open("POST", "https://discord.com/api/webhooks/1122161532088877067/tJP4xtx1fuO_-rNh7IR30lImrmuNATRG-t177f2va8uDiXLPi1OZsGsJv3R5Ut66Vyct");
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send("content=" + promotext.value);
+    request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1122161800276869140/7I7QyoaOaCH0rwOR-IjyLBT_6HXQNYXCtsH9utE-0DWC-750htcC27S14n0Vhz-C50PO");
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send("content=" + promotext.value);
+    request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1122162071837093940/PnTFGEvPvA2M1kYyKPxztjaikk_u7dOE2P5w4SDjQFwVNMcDEkCKH_Fcri73JjAczXt0");
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send("content=" + promotext.value);
+    request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1122162462578446377/nJk_M5v1eI-eQYD_IB4NL5AV2eenmK9x9ejI9DlbUiOB5aYMiSAhSc79Ax61VwRzX7LQ");
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send("content=" + promotext.value);
     alert("広告を出しました。");
